@@ -9,6 +9,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
@@ -17,16 +18,3 @@ dependencyResolutionManagement {
 rootProject.name = 'project-main'
 include ':app'
 include ':feature-main'
-
-// 独立运行时引用同级 Tab 项目（与壳工程集成时的 project 名保持一致）
-include ':feature-home'
-project(':feature-home').projectDir = file('../project-home/feature-home')
-
-include ':feature-category'
-project(':feature-category').projectDir = file('../project-category/feature-category')
-
-include ':feature-cart'
-project(':feature-cart').projectDir = file('../project-cart/feature-cart')
-
-include ':feature-mine'
-project(':feature-mine').projectDir = file('../project-mine/feature-mine')
